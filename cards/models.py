@@ -13,3 +13,10 @@ class Card(models.Model):
                            verbose_name=_("Sex type"))
     created_at = models.DateTimeField(auto_now_add=True, help_text=_("Created at"), verbose_name=_("Created at"))
     updated_at = models.DateTimeField(auto_now=True, help_text=_("Updated at"), verbose_name=_("Updated at"))
+
+    def __str__(self):
+        return "{} - {} - {}".format(_("Card"), self.id, self.full_name)
+
+    class Meta:
+        verbose_name = _("Card")
+        verbose_name_plural = _("Cards")
