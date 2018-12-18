@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from cards.views import print_card, download_card
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     url(r'^dashboard/', admin.site.urls),
     url(r'^print_card/(?P<card_id>.*)/$', print_card),
     url(r'^download_card/(?P<card_id>.*)/$', download_card),
-]
+)
+
+admin.site.site_title = _('Takaful Dashboard')

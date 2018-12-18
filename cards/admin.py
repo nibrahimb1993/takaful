@@ -16,9 +16,12 @@ class CardAdmin(admin.ModelAdmin):
     ]
 
     def _action(self, card):
-        return '<a target="_blank" href="/print_card/{}/">Print</a> / <a href="/download_card/{}/">Download</a>'.format(
+        return '<a target="_blank" href="/print_card/{}/">{}</a> / <a href="/download_card/{}/">{}</a>'.format(
             card.id,
-            card.id)
+            _("Print"),
+            card.id,
+            _("Download"),
+        )
 
     _action.short_description = _('Action')
     _action.allow_tags = True
