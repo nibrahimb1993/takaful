@@ -1,7 +1,5 @@
 from django.contrib import admin
-from django.http import HttpResponse
-from django.template.loader import get_template
-from weasyprint import HTML
+from django.utils.translation import gettext_lazy as _
 
 from cards.models import Card
 
@@ -14,19 +12,13 @@ class CardAdmin(admin.ModelAdmin):
         "id_number",
         "date_of_birth",
         "sex",
+        "_action",
     ]
 
-    actions = [
-        'print_card'
-    ]
+    def _action(self, card):
+        return '<a target="_blank" href="/print_card/{}/">Print</a> / <a href="/download_card/{}/">Download</a>'.format(
+            card.id,
+            card.id)
 
-    def print_card(self, request, queryset):
-        html_template = get_template('card.html')
-        rendered_html = html_template.render({'card': queryset.first()})
-        pdf_file = HTML(string=rendered_html).write_pdf()
-        response = HttpResponse(content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="card.pdf"'
-        response.write(pdf_file)
-        return response
-
-    print_card.short_description = "Print selected card"
+    _action.short_description = _('Action')
+    _action.allow_tags = True

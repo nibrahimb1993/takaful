@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from cards.views import print_card, download_card
+
 urlpatterns = [
     url(r'^dashboard/', admin.site.urls),
+    url(r'^print_card/(?P<card_id>.*)/$', print_card),
+    url(r'^download_card/(?P<card_id>.*)/$', download_card),
 ]
