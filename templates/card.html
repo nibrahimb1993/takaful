@@ -1,0 +1,41 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+    <style>
+        @page {
+            size: 800px 500px;
+            margin: 0px;
+        }
+
+        p {
+            font-size: 35px;
+            margin: 5px;
+            font-weight: bold;
+
+        }
+
+        div {
+            padding-top: 250px;
+            padding-left: 90px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p style="margin-left: 25px">{{ card.full_name }}</p>
+
+    <p style="display: inline; margin-right: 250px">{{ card.id_number }}</p>
+    <p style="display: inline">{{ card.id }}</p>
+    <br>
+    <p style="display: inline; margin-right: 220px; margin-left: 45px;">{{ card.date_of_birth.year }}</p>
+    <p style="display: inline">{{ card.sex }}</p>
+    <br>
+    <p style="display: inline; margin-right: 160px; margin-left: 70px;">{{ card.created_at }}</p>
+    <p style="display: inline">{{ card.updated_at }}</p>
+</div>
+
+</body>
+</html>
