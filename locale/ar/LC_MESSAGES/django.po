@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-19 06:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: cards/__init__.py:9
+msgid "Male"
+msgstr "ذكر"
+
+#: cards/__init__.py:10
+msgid "Female"
+msgstr "انثى"
+
+#: cards/admin.py:21
+msgid "Print"
+msgstr "طباعة"
+
+#: cards/admin.py:23
+msgid "Download"
+msgstr "تنزيل"
+
+#: cards/admin.py:26
+msgid "Action"
+msgstr "مهمة"
+
+#: cards/models.py:8
+msgid "Full name for card holder"
+msgstr "الاسم الكامل لحامل البطاقة"
+
+#: cards/models.py:8
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#: cards/models.py:9
+msgid "Phone number"
+msgstr "رقم الجوال"
+
+#: cards/models.py:10
+msgid "ID number"
+msgstr "رقم الهوية"
+
+#: cards/models.py:11
+msgid "Date of birth"
+msgstr "تاريخ الميلاد"
+
+#: cards/models.py:12 cards/models.py:13
+msgid "Sex type"
+msgstr "الجنس"
+
+#: cards/models.py:14
+msgid "Created at"
+msgstr "تاريخ الانشاء"
+
+#: cards/models.py:15
+msgid "Updated at"
+msgstr "تاريخ التعديل"
+
+#: cards/models.py:18 cards/models.py:21
+msgid "Card"
+msgstr "بطاقة"
+
+#: cards/models.py:22
+msgid "Cards"
+msgstr "بطائق"
+
+#: takaful/settings.py:112
+msgid "English"
+msgstr "الانجليزية"
+
+#: takaful/settings.py:113
+msgid "Arabic"
+msgstr "العربية"
+
+#: takaful/urls.py:29
+msgid "Takaful Dashboard"
+msgstr "لوحة تحكم تكافل"
