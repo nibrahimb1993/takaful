@@ -139,7 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
