@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+
+import dj_database_url
+from decouple import config
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+q8oa0pl^5^nd217qw&&la658#m^^&x#c8+&!t6x8r_6x4sxi!'
+# SECRET_KEY = '+q8oa0pl^5^nd217qw&&la658#m^^&x#c8+&!t6x8r_6x4sxi!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -36,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # 'whitenoise',
     'cards',
 ]
 
@@ -76,19 +79,19 @@ WSGI_APPLICATION = 'takaful.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("DATABASE_NAME", 'takaful'),
-        'USER': os.environ.get("DATABASE_USER", "postgresqldbuser@takaful-app-postgresqldbserver"),
-        'PASSWORD': os.environ.get("DATABASE_PASSWORD", 'Ibrahim1993'),
-        'HOST': os.environ.get("DATABASE_HOST", "takaful-app-postgresqldbserver.postgres.database.azure.com"),
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get("DATABASE_NAME", 'postgresql-1-vm'),
+#         'USER': os.environ.get("DATABASE_USER", "postgresqldbuser@takaful-app-postgresqldbserver"),
+#         'PASSWORD': os.environ.get("DATABASE_PASSWORD", 'Ibrahim1993'),
+#         'HOST': os.environ.get("DATABASE_HOST", "35.204.117.244"),
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -135,3 +138,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
