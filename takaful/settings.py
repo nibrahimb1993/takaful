@@ -78,7 +78,10 @@ WSGI_APPLICATION = 'takaful.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get("DATABASE_NAME", 'takaful'),
         'USER': os.environ.get("DATABASE_USER", "postgresqldbuser@takaful-app-postgresqldbserver"),
         'PASSWORD': os.environ.get("DATABASE_PASSWORD", 'Ibrahim1993'),
@@ -109,11 +112,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGES = (
-    ('en-us', _('English')),
+    ('en', _('English')),
     ('ar', _('Arabic')),
 )
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
