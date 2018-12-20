@@ -48,10 +48,8 @@ msgid "The user who create the card"
 msgstr "المستخدم الذي اضاف الكرت"
 
 #: cards/models.py:16
-#, fuzzy
-#| msgid "Created at"
 msgid "Create by"
-msgstr "تاريخ الانشاء"
+msgstr "اضيف بواسطة"
 
 #: cards/models.py:17
 msgid "Full name for card holder"
@@ -86,14 +84,10 @@ msgid "Updated at"
 msgstr "تاريخ التعديل"
 
 #: cards/models.py:25
-#, fuzzy
-#| msgid "Date of birth"
 msgid "The date of start"
 msgstr "تاريخ الميلاد"
 
 #: cards/models.py:26
-#, fuzzy
-#| msgid "Created at"
 msgid "Started at"
 msgstr "تاريخ الانشاء"
 
