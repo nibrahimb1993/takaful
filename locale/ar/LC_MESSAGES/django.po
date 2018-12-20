@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-19 06:30+0000\n"
+"POT-Creation-Date: 2018-12-20 08:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,63 +27,97 @@ msgstr "ذكر"
 msgid "Female"
 msgstr "انثى"
 
-#: cards/admin.py:21
+#: cards/admin.py:30
 msgid "Print"
 msgstr "طباعة"
 
-#: cards/admin.py:23
+#: cards/admin.py:32
 msgid "Download"
 msgstr "تنزيل"
 
-#: cards/admin.py:26
+#: cards/admin.py:35
 msgid "Action"
 msgstr "مهمة"
 
-#: cards/models.py:8
+#: cards/admin.py:64
+msgid "Reset password"
+msgstr "تهيئة الرمز السري"
+
+#: cards/models.py:15
+msgid "The user who create the card"
+msgstr "المستخدم الذي اضاف الكرت"
+
+#: cards/models.py:16
+#, fuzzy
+#| msgid "Created at"
+msgid "Create by"
+msgstr "تاريخ الانشاء"
+
+#: cards/models.py:17
 msgid "Full name for card holder"
 msgstr "الاسم الكامل لحامل البطاقة"
 
-#: cards/models.py:8
+#: cards/models.py:17
 msgid "Full Name"
 msgstr "الاسم الكامل"
 
-#: cards/models.py:9
+#: cards/models.py:18
 msgid "Phone number"
 msgstr "رقم الجوال"
 
-#: cards/models.py:10
+#: cards/models.py:19
 msgid "ID number"
 msgstr "رقم الهوية"
 
-#: cards/models.py:11
+#: cards/models.py:20
 msgid "Date of birth"
 msgstr "تاريخ الميلاد"
 
-#: cards/models.py:12 cards/models.py:13
+#: cards/models.py:21 cards/models.py:22
 msgid "Sex type"
 msgstr "الجنس"
 
-#: cards/models.py:14
+#: cards/models.py:23
 msgid "Created at"
 msgstr "تاريخ الانشاء"
 
-#: cards/models.py:15
+#: cards/models.py:24
 msgid "Updated at"
 msgstr "تاريخ التعديل"
 
-#: cards/models.py:18 cards/models.py:21
+#: cards/models.py:25
+#, fuzzy
+#| msgid "Date of birth"
+msgid "The date of start"
+msgstr "تاريخ الميلاد"
+
+#: cards/models.py:26
+#, fuzzy
+#| msgid "Created at"
+msgid "Started at"
+msgstr "تاريخ الانشاء"
+
+#: cards/models.py:27
+msgid "The date of expire"
+msgstr "تاريخ الانتهاء"
+
+#: cards/models.py:28
+msgid "Expire at"
+msgstr "تنتهي في"
+
+#: cards/models.py:33 cards/models.py:36
 msgid "Card"
 msgstr "بطاقة"
 
-#: cards/models.py:22
+#: cards/models.py:37
 msgid "Cards"
 msgstr "بطائق"
 
-#: takaful/settings.py:112
+#: takaful/settings.py:119
 msgid "English"
 msgstr "الانجليزية"
 
-#: takaful/settings.py:113
+#: takaful/settings.py:120
 msgid "Arabic"
 msgstr "العربية"
 
