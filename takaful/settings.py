@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '+q8oa0pl^5^nd217qw&&la658#m^^&x#c8+&!t6x8r_6x4sxi!'
+SECRET_KEY = '+q8oa0pl^5^nd217qw&&la658#m^^&x#c8+&!t6x8r_6x4sxi!'
 
 ALLOWED_HOSTS = ["*"]
 
@@ -76,12 +76,6 @@ WSGI_APPLICATION = 'takaful.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -136,3 +130,8 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
