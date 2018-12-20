@@ -33,8 +33,8 @@
     <p style="display: inline; margin-right: 220px; margin-left: 45px;">{{ card.date_of_birth.year }}</p>
     <p style="display: inline">{{ card.sex }}</p>
     <br>
-    <p style="display: inline; margin-right: 160px; margin-left: 70px;">{{ card.created_at }}</p>
-    <p style="display: inline">{{ card.updated_at }}</p>
+    <p style="display: inline; margin-right: 160px; margin-left: 70px;">{{ card.started_at|date:"d/m/Y" }}</p>
+    <p style="display: inline">{{ card.expire_at|date:"d/m/Y" }}</p>
 </div>
 
 </body>
