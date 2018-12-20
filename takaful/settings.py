@@ -25,9 +25,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '+q8oa0pl^5^nd217qw&&la658#m^^&x#c8+&!t6x8r_6x4sxi!'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
@@ -39,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'whitenoise',
     'cards',
 ]
 
@@ -82,15 +78,8 @@ WSGI_APPLICATION = 'takaful.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.environ.get("DATABASE_NAME", 'postgresql-1-vm'),
-#         'USER': os.environ.get("DATABASE_USER", "postgresqldbuser@takaful-app-postgresqldbserver"),
-#         'PASSWORD': os.environ.get("DATABASE_PASSWORD", 'Ibrahim1993'),
-#         'HOST': os.environ.get("DATABASE_HOST", "35.204.117.244"),
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
 
@@ -141,7 +130,6 @@ LOCALE_PATHS = (
 )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
