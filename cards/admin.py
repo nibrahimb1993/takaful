@@ -14,7 +14,7 @@ class CardAdmin(admin.ModelAdmin):
         "full_name",
         "phone_number",
         "id_number",
-        "date_of_birth",
+        "_date_of_birth",
         "sex",
         "_action",
     ]
@@ -23,6 +23,10 @@ class CardAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     ]
+
+    @staticmethod
+    def _date_of_birth(card):
+        return card.date_of_birth.isoformat()
 
     def _action(self, card):
         return '<a target="_blank" href="/print_card/{}/">{}</a> / <a href="/download_card/{}/">{}</a>'.format(
