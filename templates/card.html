@@ -12,29 +12,30 @@
 
         p {
             font-size: 35px;
-            margin: 5px;
             font-weight: bold;
 
         }
 
         div {
-            padding-top: 250px;
-            padding-left: 90px;
+            padding-top: 220px;
+            padding-left: 105px;
         }
     </style>
 </head>
 <body>
 <div>
-    <p style="margin-left: 25px">{{ card.full_name }}</p>
+    <p style="margin-left: 25px; margin-bottom: 8px">{{ card.full_name }}</p>
 
-    <p style="display: inline; margin-right: 250px">{{ card.id_number }}</p>
+    <p style="display: inline; margin-right: 265px; margin-left: 10px">{{ card.id_number }}</p>
     <p style="display: inline">{{ card.id }}</p>
     <br>
-    <p style="display: inline; margin-right: 220px; margin-left: 45px;">{{ card.date_of_birth.year }}</p>
+
+    <p style="display: inline; margin-right: 190px; margin-left: 45px;">{{ card.date_of_birth.year }}</p>
     <p style="display: inline">{{ card.sex }}</p>
     <br>
-    <p style="display: inline; margin-right: 160px; margin-left: 70px;">{{ card.started_at|date:"d-m-Y" }}</p>
-    <p style="display: inline">{{ card.expire_at|date:"d-m-Y" }}</p>
+    <div style="width: 100%; padding-top: 20px; padding-left: 0px;"/>
+    <p style="display: inline; margin-top: 15px; margin-right: 155px; margin-left: 70px;">{{ card.started_at|date:"d-m-Y" }}</p>
+    <p style="display: inline; margin-top: 15px">{{ card.expire_at|date:"d-m-Y" }}</p>
 </div>
 
 </body>
